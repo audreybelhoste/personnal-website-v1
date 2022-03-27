@@ -1,0 +1,97 @@
+.button{
+
+    display: inline-block;
+    text-decoration: none;
+    padding: 13px 40px;
+    font-size: 18px;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+    transition: all 0.2s ease;
+    text-align: center;
+
+    @include tablet{
+        padding: 11px 40px;
+        font-size: 16px;
+    }
+
+    &--secondary{
+        background-color: $brand-light;
+        color: $brand-dark;
+
+        &:hover{
+            background-color: $brand-light;
+        }
+
+    }
+
+}
+
+.btnClose{
+    display: block;
+    background: transparent url(../images/cancel.svg) no-repeat center center;
+    background-size: contain;
+    border: none;
+    width: 30px; 
+    height: 30px;
+    position: absolute;
+    top: 15px; 
+    right: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover{
+        transform: scale(1.2);
+    }
+
+    @include tablet{
+        top: 20px; 
+        right: 20px;
+    }
+}
+
+#backToTop{
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    background-color: rgba(235, 228, 218, 0.5);
+    width: 40px;
+    height: 40px;
+    display: block; 
+    background-size: 14px;
+
+    @include tablet{
+        bottom: 50px;
+        width: 40px;
+        height: 40px;
+
+    }
+    
+    @include laptop{
+        position: fixed;
+        opacity: 0;
+        transition: all 0.3s ease;
+        transform: scale(0.5);
+    }
+
+    &:after{
+        content: "";
+        display: block;
+        background: transparent url(../images/top.svg) no-repeat center center;
+        background-size: contain;
+        width: 20px; 
+        height: 20px;
+        position: absolute;
+        left:50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+
+    &.visible{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
